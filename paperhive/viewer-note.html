@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PDF Viewer</title>
+  <!-- PDF.js library -->
+  <script src="./pdfjs/pdf.js"></script>
+  <script src="./js/viewer-note.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    canvas {
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .loading {
+      font-size: 18px;
+      color: #555;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="loading">Loading PDF...</div>
+  </div>
+</body>
+</html>
