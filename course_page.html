@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DU Courses - Study Material</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/course_styles.css">
+</head>
+<body>
+  <header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="./duhive_logo.png" alt="PaperHive Logo" class="logo-img">
+      DuHive
+    </div>
+
+    <nav class="nav-links">
+      <a href="./paperhive.html">Home</a>
+      <a href="./course_page.html">Courses</a>
+      <a href="#">Notes</a>
+      <a href="#">Question Papers</a>
+    </nav>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <div id="offCanvasMenu" class="off-canvas">
+    <a href="#" class="" toggleMenu()>✖</a>
+    <a href="./paperhive.html">Home</a>
+    <a href="./course_page.html">Courses</a>
+    <a href="#">Notes</a>
+    <a href="#">Question Papers</a>
+  </div>
+</header>
+
+
+  <div class="search-bar">
+      <input type="text" id="searchBox" name="search" placeholder="Subject..." oninput="searchAcrossTabs()">
+  </div>
+
+  <!-- Tab links -->
+  <div class="tab">
+    <button class="tablinks" data-tab="art" onclick="openCity(event, 'art')">Arts & Humanities</button>
+    <button class="tablinks" data-tab="commerce" onclick="openCity(event, 'commerce')">Commerce & Business</button>
+    <button class="tablinks" data-tab="science" onclick="openCity(event, 'science')">Science</button>
+    <button class="tablinks" data-tab="ge" onclick="openCity(event, 'ge')">GE</button>
+    <button class="tablinks" data-tab="aec" onclick="openCity(event, 'aec')">AEC</button>
+    <button class="tablinks" data-tab="sec" onclick="openCity(event, 'sec')">SEC</button>
+    <button class="tablinks" data-tab="vac" onclick="openCity(event, 'vac')">VAC</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="art" class="tabcontent">
+    <section class="grid">
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Applied Psychology</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Business Economics (BBE)</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Economics</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) English</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Geography</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Hindi</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) History</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Patrakarita Evam Jansanchar</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Italian</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Journalism</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Music</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Persian</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Philosophy</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Political Science</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Psychology</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Punjabi</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Sanskrit</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Social Work</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Sociology</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Spanish</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons) Urdu</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. (Hons.) Hindi Journalism and Mass Communication</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. Functional Hindi</h3>
+      </a>
+
+      <a href="./course_page.html" id="London" class="card" style="text-decoration: none;" >
+        <h3>B.A. Vocational Studies</h3>
+      </a>
+    </section>
+  </div>
+
+  <div id="commerce" class="tabcontent">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>B.Com</h3>
+      </a>
+
+      <a href="./courses/commerce/b.com(H).html" class="card" style="text-decoration: none;" >
+        <h3>B.Com (Hons)</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>BFA</h3>
+      </a>
+    </section>
+  </div>
+
+  <div id="science" class="tabcontent">
+    <section class="grid">
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Anthropology</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons.) Instrumentation</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Bio-Chemistry</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Biomedical Science</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Botany</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Chemistry</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Computer Science</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Electronics</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Food Technology</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Geology</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Home Science</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Mathematics</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Microbiology</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Physics</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Polymer Science</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Statistics</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons) Zoology</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Hons.) Biological Sciences</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (MT) Radiography</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. (Genl) Mathematical Science</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Applied Science</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Applied Life Sciences</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Applied Physical Science</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Applied Life Sciences with Agro-Chemical & Pest Management</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Applied Physical Science (Analytical Chemistry)</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Applied Physical Sciences (Industrial Chemistry)</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Home Science (Pass)</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Industrial Chemistry</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Life Sciences</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Physical Sciences</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Physical Education & Sports Sciences</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Physical Science Computer Science</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Physical Science with Chemistry</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Sc. Physical Science with Computer</h3>
+      </a>
+
+    </section>
+  </div>
+
+  <div id="ge" class="tabcontent">
+    <section class="grid">
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Machine Translation Tools and Techniques - 1235001006</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Com</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>B.Com (Hons)</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>BFA</h3>
+      </a>
+    </section>
+  </div>
+
+  <!--<section id="courses" class="course-grid">
+  </section>
+
+  <div id="materialModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <div id="materialsList"></div>
+    </div>
+  </div>-->
+
+  <footer>
+    &copy; 2025 DuHive. All rights reserved.
+  </footer>
+
+  <script src="./js/course_script.js"></script>
+</body>
+</html>

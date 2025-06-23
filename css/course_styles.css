@@ -1,0 +1,371 @@
+/* styles.css */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+body {
+  margin: 0;
+  background-color: #141430;
+}
+
+header {
+  background-color: #141430;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.logo-img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 100;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #1865f2;
+  text-decoration: underline;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #141430;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.course-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(255, 255, 255, 0.9);
+}
+
+.course-card h3 {
+  color: #0f4c81;
+  margin-bottom: 1rem;
+}
+
+.course-card button {
+  background-color: #0f4c81;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin: 0.25rem 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.close-button {
+  float: right;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+}
+/* Style the tab */
+.tab {
+  display: flex;
+  overflow: hidden;
+  background-color: #141430;
+  justify-content: center;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: #ffffff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  transition: 0.3s;
+  border-radius: 4px;
+  color: #141430;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  color: white;
+  text-align: left;
+}
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-content: center;
+  margin: auto;
+}
+.card {
+  background: #ffffff0D;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.card h3 {
+  color: rgba(255,255,255,0.4);
+}
+.card button{
+  background:none;
+  border: none;
+}
+.grid :hover{
+  background-color: #1865f2;
+}
+footer {
+  background: rgb(29 29 60);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  position:relative;
+  bottom: 0;
+}
+.search-bar{
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+
+}
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('/paperhive/searchicon\ \(1\).png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 50%;
+}
+
+/* Logo and header structure */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  gap: 0.5rem;
+}
+.logo-img {
+  height: 30px;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+}
+.nav-links a:hover {
+  color: #1865f2;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Off-canvas menu */
+.off-canvas {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100vh;
+  background: #141430da;
+  padding: 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+}
+.off-canvas.open {
+  left: 0;
+}
+.off-canvas a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+.close-btn {
+  align-self: flex-end;
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Tabs */
+.tab {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+  background-color: #141430;
+}
+.tab button {
+  white-space: nowrap;
+  background-color: #ffffff;
+  color: #141430;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Cards */
+.card h3 {
+  font-size: 1rem;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    align-items: center;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .tab {
+    flex-direction: row;
+    overflow-x: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .tab button {
+    flex: 0 0 auto;
+  }
+  input[type=text]:focus {
+  width: 70%;
+  }
+}

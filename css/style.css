@@ -1,0 +1,244 @@
+/* style.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+body {
+  background-image: url('./paperhive/young-people-reading-books-together-600nw-2054023493.webp');
+  background: #141430;
+  color: #333;
+}
+header {
+  background-color: #141430;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+}
+.logo-img {
+  height: 30px;
+  margin-right: 0.5rem;
+}
+.top-img {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: auto;
+  max-width: 60%;
+  height: auto;
+  margin-top: 66px;
+  /*filter: drop-shadow(0px 0px 70px rgb( 221, 232, 254));*/
+}
+
+nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 100;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #1865f2;
+  /*text-decoration: underline;*/
+}
+.hero {
+  background-image: url('./young-people-reading-books-together-600nw-2054023493.webp');
+  padding: 3rem 2rem;
+  background: #141430;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-weight: 300;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+.search-bar {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.search-bar input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  outline: none;
+}
+.search-bar button {
+  padding: 1rem 1.5rem;
+  background: rgb(29 29 60);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-content: center;
+  margin: auto;
+}
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.card h3 {
+  color: #0f4c81;
+}
+.card a{
+  text-decoration: none;
+}
+footer {
+  background: rgb(29 29 60);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    align-items: center;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  .top-img {
+    max-width: 90%;
+    margin-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    width: 90%;
+    margin-top: 1rem;
+  }
+
+  .search-bar input, .search-bar button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.off-canvas {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100vh;
+  width: 250px;
+  background: #141430da;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+}
+
+.off-canvas a {
+  color: white;
+  text-decoration: none;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.off-canvas a:first-child {
+  align-self: flex-end;
+  font-size: 1.5rem;
+}
+
+.off-canvas.open {
+  left: 0;
+}
+
+/* Show hamburger menu and hide nav on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}
+
+
