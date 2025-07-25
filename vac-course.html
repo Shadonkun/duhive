@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document Categories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/arts.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="./duhive_black.png" alt="Logo" class="logo-img" />
+      DuHive
+    </div>
+    <nav>
+      <a href="./duhive.html">Home</a>
+      <a href="./course_page.html">Courses</a>
+      <a href="#">Notes</a>
+      <a href="#">Papers</a>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <div class="page-header">
+    <h1>Value Added Courses</h1>
+    <div class="search-container">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="UPC / Subject Name..."
+            onkeyup="filterCourses()"
+        />
+    </div>
+    <div class="tabs">
+      <a href="#" class="active">Categories</a>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="category-container">
+    <div class="category-block">
+      <!--<h2>Honors</h2>-->
+      <ul>
+        <li><a href="./vac.html?course=6967000001">6967000001 - Ayurveda and Nutrition</a></li>
+        <li><a href="./vac.html?course=6967000002">6967000002 - Constitutuional Values and Fundamental Duties</a></li>
+        <li><a href="./vac.html?course=6967000003">6967000003 - Culture and Communication</a></li>
+        <li><a href="./vac.html?course=6967000005">6967000005 - Emotional Intelligence</a></li>
+        <li><a href="./vac.html?course=6967000006">6967000006 - Ethics and Culture</a></li>
+        <li><a href="./vac.html?course=6967000007">6967000007 - Ethics and Values in Ancient Indian Tradition</a></li>
+        <li><a href="./vac.html?course=6967000008">6967000008 - Financial Literacy</a></li>
+        <li><a href="./vac.html?course=6967000010">6967000010 - Gandhi and Education</a></li>
+        <li><a href="./vac.html?course=6967000011">6967000011 - Ecology and Literature</a></li>
+        <li><a href="./vac.html?course=6967000013">6967000013 - Panchkosha Hoslistic Development of Personality</a></li>
+        <li><a href="./vac.html?course=6967000014">6967000014 - Reading Indian Fiction in English</a></li>
+        <li><a href="./vac.html?course=6967000015">6967000015 - Science and Society</a></li>
+        <li><a href="./vac.html?course=6967000016">6967000016 - Social and Emotional Learning</a></li>
+        <li><a href="./vac.html?course=6967000018">6967000018 - Swachh Bharat</a></li>
+        <li><a href="./vac.html?course=6967000019">6967000019 - Art of Being Happy</a></li>
+        <li><a href="./vac.html?course=6967000020-6967001020">6967000020,6967001020 - Vedic Mathematics 1</a></li>
+        <li><a href="./vac.html?course=6967000021">6967000021 - Yoga Philosophy and Practice</a></li>
+        <li><a href="./vac.html?course=6967000022">6967000022 - Bharatie Bhakti Parampra aur Manav Mulye</a></li>
+        <li><a href="./vac.html?course=6967000023">6967000023 - Sahitye Sanskriti and Cinema</a></li>
+        <li><a href="./vac.html?course=6967000024">6967000024 - Srijanatmak Lekhan ke Ayam</a></li>
+        <li><a href="./vac.html?course=6967001101">6967001101 - National Cadet Corps 1</a></li>
+        <li><a href="./vac.html?course=6967002301">6967002301 - National Cadet Corps 3</a></li>
+        <li><a href="./vac.html?course=6967002401">6967002401 - National Cadet Corps 4</a></li>
+        <li><a href="./vac.html?course=6967006001">6967006001 - Vedic Mathematics 2</a></li>
+        <li><a href="./vac.html?course=6967007001">6967007001 - Vedic Mathematics 3</a></li>
+        <li><a href="./vac.html?course=6967008001">6967008001 - Vedic Mathematics 4</a></li>
+      </ul>
+    </div>
+    <!--<div class="category-block">
+      <h2>Applied and Prog.</h2>
+      <ul>
+        <li><a href="./course_content.html?title=Bsc%20Mathematical%20Science&course=bsc_mathematical_science">Bsc Mathematical Science</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Applied%20Life%20Science&course=bsc_applied_life_science">Bsc Applied Life Science</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Life%20Science&course=bsc_life_science">Bsc Life Sciences</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Home%20Science&course=bsc_home_science">Bsc Home Sciences</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Physical%20Science&course=bsc_physical_science">Bsc Physical Science</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Physical%20Science%20Computer%20Science&course=bsc_physical_science_computer_science">Bsc Physical Science Computer Science</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Physical%20Science%20with%20Chemistry&course=bsc_physical_science_with_chemistry">Bsc Physical Science with Chemistry</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Physical%20Science%20with%20Electronics&course=bsc_physical_science_with_electronics">Bsc Physical Science with Electronics</a></li>
+
+      </ul>
+    </div>-->
+    <!-- Add more category-blocks as needed -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">About Scribd</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help / FAQ</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Pinterest</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Scribd Inc. — Language: English
+    </div>
+  </footer>
+    <script>
+    function filterCourses() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const items = document.querySelectorAll('.category-block ul li');
+
+        items.forEach(item => {
+        const text = item.textContent || item.innerText;
+        item.style.display = text.toLowerCase().includes(filter) ? '' : 'none';
+        });
+    }
+    </script>
+</body>
+</html>

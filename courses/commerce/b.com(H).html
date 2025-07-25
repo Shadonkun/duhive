@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DuHive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+  *{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+body {
+  margin: 0;
+  background-color: #141430;
+}
+
+header {
+  background-color: #141430;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+}
+.logo-img {
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 100;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #1865f2;
+  text-decoration: underline;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #141430;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.hero {
+  padding: 0rem 2rem;
+  background: #141430;
+  text-align: center;
+  background-size: auto;
+  background:url(/paperhive/young-people-reading-books-together-600nw-2054023493.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 50px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-weight: 300;
+  margin-top: 4rem;
+  
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #141430;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+footer {
+  background: rgb(29 29 60);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  bottom: 0;
+  position: bottom;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position:relative;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  animation: fadeEffect 0.5s ease-in-out;
+  border-radius: 5px;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.dropdown-content a:hover {background-color: #ddd;border-radius: 5px;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #1865f2;}
+
+
+.card-detail {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  border: 1px dashed #999;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+/* Style the tab */
+.tab {
+  display: flex;
+  overflow: hidden;
+  background-color: transparent;
+  justify-content:end;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-weight: 400;
+}
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: #ffffff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  transition: 0.3s;
+  border-radius: 4px;
+  color: #141430;
+  font-size: 16px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-content: center;
+  margin: auto;
+}
+.card {
+  background: #141430af;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.623);
+  display: flex;
+  justify-content: space-between;
+}
+.card h3 {
+  color: rgba(255, 255, 255);
+}
+.card button{
+  background:none;
+  border: none;
+}
+.grid :hover{
+  background-color: #1865f2;
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .logo {
+    align-items: center;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  .top-img {
+    max-width: 90%;
+    margin-top: 80px;
+  }
+  .hero{
+    padding: 1rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    width: 90%;
+    margin-top: 1rem;
+  }
+
+  .search-bar input, .search-bar button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+  .hero{
+    background-size: contain;
+    background-position-y:8rem ;
+  }
+  .tab{
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+  .tab button{
+    flex: 80%;
+    padding: 14px 18px;
+    margin-left: 0.6rem;
+    margin-bottom: 1rem;
+  }
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.off-canvas {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100vh;
+  width: 250px;
+  background: #141430;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+}
+
+.off-canvas a {
+  color: white;
+  text-decoration: none;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.off-canvas a:first-child {
+  align-self: flex-end;
+  font-size: 1.5rem;
+}
+
+.off-canvas.open {
+  left: 0;
+}
+
+/* Show hamburger menu and hide nav on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+    <div class="logo">
+      <img src="/paperhive/duhive_logo.png" alt="PaperHive Logo" class="logo-img">
+      DuHive
+    </div>
+
+    <nav class="nav-links">
+      <a href="/paperhive/paperhive.html">Home</a>
+      <a href="/paperhive/course_page.html">Courses</a>
+      <a href="#">Notes</a>
+      <a href="#">Question Papers</a>
+    </nav>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+
+    <div id="offCanvasMenu" class="off-canvas">
+    <a href="#" onclick="toggleMenu()">✖</a>
+    <a href="/paperhive/paperhive.html">Home</a>
+    <a href="/paperhive/course_page.html">Courses</a>
+    <a href="#">Notes</a>
+    <a href="#">Question Papers</a>
+    </div>
+  </header>
+  <section class="hero">
+    <h1>B.Com (H)</h1>
+<div class="dropdown">
+  <button class="dropbtn">Semester</button>
+  <div class="dropdown-content">
+    <div class="first-tabs">
+      <a onclick="openCityCard('i')">I</a>
+      <a onclick="openCityCard('ii')">II</a>
+      <a onclick="openCityCard('iii')">III</a>
+      <a onclick="openCityCard('iv')">IV</a>
+      <a onclick="openCityCard('v')">V</a>
+      <a onclick="openCityCard('vi')">VI</a>
+    </div>
+  </div>
+</div>
+
+<!-- City Cards -->
+<div id="i" class="tab">
+  <button onclick="toggleContent('i', 'notes')">📄 Notes</button>
+  <button onclick="toggleContent('i', 'papers')">📝 Papers</button>
+  <button onclick="toggleContent('i', 'books')">📚 Books</button>
+  <button onclick="toggleContent('i', 'imptopics')">📝 Imp. Topics</button>
+
+
+  <div class="tabcontent" id="i-notes">
+    <section class="grid">
+      <a href="/paperhive/viewer-note.html?file=https://shadonkun.github.io/study-materials/materials/Practical%20File%20ode.pdf" class="card" style="text-decoration: none;" >
+        <h3>2412081101 - Management Principles and Application - Notes</h3>
+      </a>
+
+      <a href="/paperhive/viewer-note.html?file=/paperhive/vac/6967000001.pdf" class="card" style="text-decoration: none;" >
+        <h3>2412081102 - Business Law - Notes</h3>
+      </a>
+
+      <a href="/paperhive/vac/6967000001.pdf" class="card" style="text-decoration: none;" >
+        <h3>2412081103 - Financial Accounting - Notes</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="i-papers">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>2412081101 - Management Principles and Application</h3>
+      </a>
+
+      <a href="/paperhive/course_content.html?course=mpa" class="card" style="text-decoration: none;" >
+        <h3>Paper2</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper2</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="i-books">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Book3</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book3</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book3</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="i-imptopics">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics4</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics4</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics4</h3>
+      </a>
+    </section>
+  </div>
+</div>
+
+<div id="ii" class="tab">
+  <button onclick="toggleContent('ii', 'notes')">📄 Notes</button>
+  <button onclick="toggleContent('ii', 'papers')">📝 Papers</button>
+  <button onclick="toggleContent('ii', 'books')">📚 Books</button>
+  <button onclick="toggleContent('ii', 'imptopics')">📝 Imp. Topics</button>
+
+
+  <div class="tabcontent" id="ii-notes">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Notes5</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes5</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes5</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tacontent hidden" id="ii-papers">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Paper6</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper6</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper6</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent" id="ii-books">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Book7</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book7</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book7</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent" id="ii-imptopics">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics8</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics8</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics8</h3>
+      </a>
+    </section>
+  </div>
+</div>
+
+<div id="iii" class="tab">
+  <button onclick="toggleContent('iii', 'notes')">📄 Notes</button>
+  <button onclick="toggleContent('iii', 'papers')">📝 Papers</button>
+  <button onclick="toggleContent('iii', 'books')">📚 Books</button>
+  <button onclick="toggleContent('iii', 'imptopics')">📝 Imp. Topics</button>
+
+  <div class="tabcontent" id="iii-notes">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Notes9</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes9</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes9</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="iii-papers">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Paper10</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper10</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper10</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="iii-books">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Book11</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book11</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book11</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="iii-imptopics">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics12</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics12</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics12</h3>
+      </a>
+    </section>
+  </div>
+</div>
+
+<div id="iv" class="tab">
+  <button onclick="toggleContent('iv', 'notes')">📄 Notes</button>
+  <button onclick="toggleContent('iv', 'papers')">📝 Papers</button>
+  <button onclick="toggleContent('iv', 'books')">📚 Books</button>
+  <button onclick="toggleContent('iv', 'imptopics')">📝 Imp. Topics</button>
+
+
+  <div class="tabcontent" id="iv-notes">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Notes13</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes13</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes13</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="iv-papers">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Paper14</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper14</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper14</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="iv-books">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Book15</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book15</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book15</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="iv-imptopics">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics16</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics16</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics16</h3>
+      </a>
+    </section>
+  </div>
+</div>
+
+<div id="v" class="tab">
+  <button onclick="toggleContent('v', 'notes')">📄 Notes</button>
+  <button onclick="toggleContent('v', 'papers')">📝 Papers</button>
+  <button onclick="toggleContent('v', 'books')">📚 Books</button>
+  <button onclick="toggleContent('v', 'imptopics')">📝 Imp. Topics</button>
+
+
+  <div class="tabcontent" id="v-notes">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Notes17</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes17</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes17</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="v-papers">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Paper18</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper18</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper18</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="v-books">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Book19</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book19</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book19</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="v-imptopics">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics20</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics20</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics20</h3>
+      </a>
+    </section>
+  </div>
+</div>
+
+<div id="vi" class="tab">
+  <button onclick="toggleContent('vi', 'notes')">📄 Notes</button>
+  <button onclick="toggleContent('vi', 'papers')">📝 Papers</button>
+  <button onclick="toggleContent('vi', 'books')">📚 Books</button>
+  <button onclick="toggleContent('vi', 'imptopics')">📝 Imp. Topics</button>
+
+
+  <div class="tabcontent" id="vi-notes">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Notes21</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes21</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Notes21</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="vi-papers">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Paper22</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper22</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Paper22</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="vi-books">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Book23</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book23</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Book23</h3>
+      </a>
+    </section>
+  </div>
+
+  <div class="tabcontent hidden" id="vi-imptopics">
+    <section class="grid">
+      <a href="./courses/commerce/b.com.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics24</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics24</h3>
+      </a>
+
+      <a href="./course_page.html" class="card" style="text-decoration: none;" >
+        <h3>Imptopics24</h3>
+      </a>
+    </section>
+  </div>
+</div>
+
+<footer>
+    &copy; 2025 DuHive. All rights reserved.
+  </footer>
+
+<script>// Show only selected city card
+function openCityCard(cityId) {
+  document.querySelectorAll('.tab').forEach(card => card.style.display = 'none');
+  document.getElementById(cityId).style.display = 'block';
+
+  // Show Notes by default, hide Papers
+  toggleContent(cityId, 'notes');
+}
+
+// Toggle visibility between notes and papers
+function toggleContent(cityId, type) {
+  const types = ['notes', 'papers', 'books', 'imptopics'];
+  types.forEach(t => {
+    const el = document.getElementById(`${cityId}-${t}`);
+    if (el) {
+      if (t === type) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    }
+  });
+}
+
+window.onload = () => {
+    openCityCard('i');
+  };
+document.getElementById("defaultOpen").click();
+function toggleMenu() {
+    const menu = document.getElementById("offCanvasMenu");
+    menu.classList.toggle("open");
+  }
+</script>
+<script src="/paperhive/js/viewer-note.js"></script>
+</body>
+</html>
+
+
+

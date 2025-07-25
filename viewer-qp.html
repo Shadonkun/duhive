@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <title>PDF Viewer</title>
+  <!-- PDF.js library -->
+  <script src="./pdfjs/pdf.js"></script>
+  <script src="./js/viewer-qp.js" defer></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      caret-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .logo-img {
+      height: 30px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex: 1 1 100%;
+      gap: 4rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #0056d2;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: stretch;
+        transition: transform 0.3s ease;
+      }
+      nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .logo {
+        font-size: 1.4rem;
+      }
+      #container {
+        padding: 10px;
+      }
+      .viewer-toolbar {
+        flex-direction: row;
+        text-align: center;
+
+  }
+  .toolbar-left,
+  .toolbar-center,
+  .toolbar-right {
+    justify-content: center;
+  }
+
+  .pdf-description {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  header.hidden {
+    transform: translateY(-100%);
+  }
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    canvas {
+      display: block;
+      margin: 1rem auto;
+      max-width: 100%;
+      height: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    .loading {
+      font-size: 18px;
+      color: #555;
+      margin-top: 100px;
+    }
+    .pdf-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 80px auto 100px;
+  padding: 1rem;
+}
+
+#pdf-viewer {
+  flex: 3;
+}
+
+#pdf-viewer canvas {
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.pdf-sidebar {
+  flex: 1;
+  background: #e7e6e6;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  max-height: fit-content;
+  position: sticky;
+  top: 100px;
+  color: black;
+}
+
+.pdf-sidebar h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .pdf-sidebar {
+    position: fixed;
+    top: 7.6rem; /* default with header */
+    left: 0;
+    right: 0;
+    z-index: 998;
+    background-color: #fff;
+    padding: 1rem;
+    transition: top 0.3s ease;
+  }
+  .pdf-sidebar.stuck {
+    top: 0; /* when header is hidden */
+  }
+
+  .pdf-sidebar.hidden {
+    transform: translateY(-120%);
+  }
+
+  /* Space below the floating header */
+
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="./duhive_black.png" alt="Logo" class="logo-img" />
+      DuHive
+    </div>
+    
+    <nav>
+      <a href="./duhive.html">Home</a>
+      <a href="./course_page.html">Courses</a>
+      <a href="#">Notes</a>
+      <a href="#">Papers</a>
+    </nav>
+  </header>
+  <main class="pdf-wrapper">
+    <div id="pdf-viewer">
+      <div class="loading">Loading PDF...</div>
+    </div>
+
+    <aside class="pdf-sidebar" id="docDescription">
+      <!-- Dynamic content goes here -->
+    </aside>
+  </main>
+
+  <!--<div class="pdf-toolbar-mobile">
+    <button onclick="toggleFullscreen()">⛶<span>Fullscreen</span></button>
+    <button onclick="zoomOut()"><img src="./subtracticon.png" style="width: 1.2rem;height:1.2rem;"><span>Zoom Out</span></button>
+    <input id="zoomDisplay" value="100%" readonly />
+    <button onclick="zoomIn()"><img src="./additionicon.png" style="width: 1rem;height:1rem;"><span>Zoom In</span></button>
+    <a id="downloadBtn" download="document.pdf"><img src="./Downloadicon.png" style="width: 1rem;height:1.3rem;"><span>Download</span></a>
+  </div>-->
+</body>
+</html>

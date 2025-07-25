@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document Categories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/arts.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="./duhive_black.png" alt="Logo" class="logo-img" />
+      DuHive
+    </div>
+    <nav>
+      <a href="./duhive.html">Home</a>
+      <a href="./course_page.html">Courses</a>
+      <a href="#">Notes</a>
+      <a href="#">Papers</a>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <div class="page-header">
+    <h1>Skill Enhancement Courses</h1>
+    <div class="search-container">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="UPC / Subject Name..."
+            onkeyup="filterCourses()"
+        />
+    </div>
+    <div class="tabs">
+      <a href="#" class="active">Categories</a>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="category-container">
+    <div class="category-block">
+      <!--<h2>Honors</h2>-->
+      <ul>
+        <li><a href="./aec.html?course=2051001001">2051001001 - Hindi Bhasha Sampreshan Aur Sanchar A</a></li>
+        <li><a href="./aec.html?course=2051001002">2051001002 - Hindi Aupcharik Lekhan B</a></li>
+        <li><a href="./aec.html?course=2051001003">2051001003 - Social Media Aur Log Lekhan C</a></li>
+        <li><a href="./aec.html?course=2051002001">2051002001 - Vyavharik Hindi A</a></li>
+        <li><a href="./aec.html?course=2051002002">2051002002 - Jansanchar Aur Rachnatmak Lekhan B</a></li>
+        <li><a href="./aec.html?course=2051002003">2051002003 - Hindi Bhasha Aur Takneek C</a></li>
+        <li><a href="./aec.html?course=2081002009">2081002009 - Journalistic Writing in Malayalam</a></li>
+        <li><a href="./aec.html?course=2131001001">2131001001 - Advance Neeti Literature in Sanskrit A</a></li>
+        <li><a href="./aec.html?course=2131001002">2131001002 - Introductory Upanishad and Geeta B</a></li>
+        <li><a href="./aec.html?course=2131001003">2131001003 - Introduction to Sanskrit Language</a></li>
+        <li><a href="./aec.html?course=2131002003">2131002003 - Introduction to Sanskrit Language</a></li>
+        <li><a href="./aec.html?course=2131002004">2131002004 - Advance Ancient Indian Economy</a></li>
+        <li><a href="./aec.html?course=2131002005">2131002005 - Administrative Structure in Kautilya's Arthashastra B</a></li>
+        <li><a href="./aec.html?course=2131002005">2131002005 - Intermediate Administrative Structure in Kautilya's Arthashastra</a></li>
+        <li><a href="./aec.html?course=2131002006">2131002006 - Culture and Society</a></li>
+        <li><a href="./aec.html?course=2181001001">2181001001 - EVS Theory into Practice 1</a></li>
+        <li><a href="./aec.html?course=2181002001">2181002001 - EVS Theory into Practice 2</a></li>
+      </ul>
+
+    </div>
+    <!--<div class="category-block">
+      <h2>Applied and Prog.</h2>
+      <ul>
+        <li><a href="./course_content.html?title=Bsc%20Mathematical%20Science&course=bsc_mathematical_science">Bsc Mathematical Science</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Applied%20Life%20Science&course=bsc_applied_life_science">Bsc Applied Life Science</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Life%20Science&course=bsc_life_science">Bsc Life Sciences</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Home%20Science&course=bsc_home_science">Bsc Home Sciences</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Physical%20Science&course=bsc_physical_science">Bsc Physical Science</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Physical%20Science%20Computer%20Science&course=bsc_physical_science_computer_science">Bsc Physical Science Computer Science</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Physical%20Science%20with%20Chemistry&course=bsc_physical_science_with_chemistry">Bsc Physical Science with Chemistry</a></li>
+        <li><a href="./course_content.html?title=Bsc%20Physical%20Science%20with%20Electronics&course=bsc_physical_science_with_electronics">Bsc Physical Science with Electronics</a></li>
+
+      </ul>
+    </div>-->
+    <!-- Add more category-blocks as needed -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">About Scribd</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help / FAQ</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Pinterest</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Scribd Inc. — Language: English
+    </div>
+  </footer>
+    <script>
+    function filterCourses() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const items = document.querySelectorAll('.category-block ul li');
+
+        items.forEach(item => {
+        const text = item.textContent || item.innerText;
+        item.style.display = text.toLowerCase().includes(filter) ? '' : 'none';
+        });
+    }
+    </script>
+</body>
+</html>
